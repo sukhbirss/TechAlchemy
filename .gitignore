@@ -1,0 +1,7 @@
+node_modules
+.vscode
+node_modules
+src/config/config.env
+dist
+impCred.txt
+package-lock.json
