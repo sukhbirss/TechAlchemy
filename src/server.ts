@@ -4,16 +4,19 @@ import morgan from "morgan";
 import swaggerUI from "swagger-ui-express";
 import cors from "cors";
 import "colors";
+import './config/initApp'
 // import xss from 'xss-clean';
 import mongoSanitize from 'express-mongo-sanitize';
 import helmet from 'helmet';
+import authRoutes from './routes/auth'
+import newsRoutes from './routes/news'
+import weatherRoutes from './routes/weather'
 
 import { swaggerDocs } from "./config/swagger";
 
 import errorHandeler from "./middleware/error";
 import connectDB from "./config/db";
 
-dotenv.config({ path: __dirname + "/config/config.env" });
 
 connectDB();
 
