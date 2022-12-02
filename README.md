@@ -1,4 +1,12 @@
-# G_assignment
+# assignment
 
-you can create a document in mongodb atlas using the create route and get data of all the documents using get request...but if your rate of fecthing surpasses 20req/mint then it will give 429 status code with error message
+swagger documentation link
+http://localhost:7500/docs
 
+
+How to start the application
+CMD -> npm run dev
+
+Before running please setup config file by taking the reference of sample config file in config folder
+
+Thanks
