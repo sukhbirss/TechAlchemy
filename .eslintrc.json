@@ -1,0 +1,58 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 13,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "rules": {
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-explicit-any": "error",
+        "no-mixed-spaces-and-tabs": "off",
+        "no-useless-escape": "off",
+        "@typescript-eslint/no-namespace": "off",
+        "no-async-promise-executor": "off",
+        "@typescript-eslint/no-use-before-define": "error",
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-use-before-define": "error",
+        "space-before-function-paren": ["error", "always"],
+        "switch-colon-spacing": ["error",{
+            "after": true,
+            "before": false
+        }],
+        "max-len": ["error", {
+                "code": 150,
+                "tabWidth": 2
+            }
+        ],
+        "camelcase": "warn",
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ]
+    }
+}
