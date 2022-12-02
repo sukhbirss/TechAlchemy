@@ -11,7 +11,7 @@ const { BAD_REQUEST, OK } = statusResponse
 // @access    Public
 export const getWeather = asyncHandler(
   async (req: Request, res: Response) => {
-    let { data } = await axios.get(weatherApi)
+    const { data } = await axios.get(weatherApi)
     const datesVisited: string[] = []
     const weatherData:IWeatherResponse[] = []
 

@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import { IUserDocument } from "./User";
+import { Request, Response } from 'express'
+import { IUserDocument } from './User'
 
 export interface ISendAdminTokenResponse {
   user: IUserDocument,

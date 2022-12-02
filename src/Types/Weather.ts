@@ -8,7 +8,7 @@ export interface IWeatherItem {
     }
   }
   
-  export interface IWeatherResponse {
+export interface IWeatherResponse {
     date: string
     main: string
     temp: string

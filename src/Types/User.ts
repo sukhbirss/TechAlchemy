@@ -5,7 +5,7 @@ export interface IUser {
   email: string;
   hash: string
   password: string
-  role: "USER";
+  role: 'USER';
   isDisabled: boolean;
 }
 

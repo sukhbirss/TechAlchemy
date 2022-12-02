@@ -1,31 +1,31 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose'
 import bcrypt from 'bcryptjs'
 
-import { IUserDocument } from "../Types";
-import { createSignedToken, generateRandomString } from "../utils/auth";
+import { IUserDocument } from '../Types'
+import { createSignedToken, generateRandomString } from '../utils/auth'
 
 const UserSchema = new Schema<IUserDocument>(
   {
     name: {
       type: String,
-      required: [true, "Please provide name field"],
+      required: [true, 'Please provide name field'],
     },
     email: {
       type: String,
-      required:  [true, "Please provide email field"],
+      required:  [true, 'Please provide email field'],
       index: true,
     },
     password: {
       type: String,
-      required:  [true, "Please provide password field"],
+      required:  [true, 'Please provide password field'],
     },
     hash: {
       type: String,
       default:() => generateRandomString(15)
     },
     role: {
-        type: String,
-        default: "USER",
+      type: String,
+      default: 'USER',
     },
     isDisabled: {
       type: Boolean,
@@ -35,7 +35,7 @@ const UserSchema = new Schema<IUserDocument>(
   {
     timestamps: true,
   }
-);
+)
 
 // Encrypt password using bcrypt
 UserSchema.pre<IUserDocument>(
@@ -69,4 +69,4 @@ UserSchema.methods.getRefreshJwtToken = function (this: IUserDocument) {
 
 
 
-export default model<IUserDocument>("User", UserSchema);
+export default model<IUserDocument>('User', UserSchema)

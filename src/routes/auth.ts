@@ -1,8 +1,8 @@
 import {
-    registerUser,
-    loginUser,
-    refreshToken,
-    test,
+  registerUser,
+  loginUser,
+  refreshToken,
+  test,
 } from '../controllers/auth'
 import express from 'express'
 import { authorize, protect } from '../middleware/auth'

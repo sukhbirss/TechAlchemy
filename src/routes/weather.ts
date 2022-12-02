@@ -1,5 +1,5 @@
 import {
-    getWeather,
+  getWeather,
 } from '../controllers/weather'
 import express from 'express'
 

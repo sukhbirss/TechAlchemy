@@ -1,8 +1,8 @@
-import { ISendAdminTokenResponse } from "../Types/Auth"
+import { ISendAdminTokenResponse } from '../Types/Auth'
 import jwt from 'jsonwebtoken'
-import { IUserDocument } from "../Types"
+import { IUserDocument } from '../Types'
 
-export function generateRandomString(length: number) {
+export function generateRandomString (length: number) {
   let result = ''
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   const charactersLength = characters.length

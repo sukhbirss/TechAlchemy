@@ -1,23 +1,23 @@
-import swaggerJsDoc from "swagger-jsdoc";
+import swaggerJsDoc from 'swagger-jsdoc'
 
 const swaggerOptions = {
   definition: {
-    openapi: "3.0.0",
+    openapi: '3.0.0',
     info: {
-      version: "1.0.0",
-      title: "Assignment",
-      description: "Assignment",
+      version: '1.0.0',
+      title: 'Assignment',
+      description: 'Assignment',
       contact: {
-        name: "Sukhbir singh",
-        email: "s.sukhbirsohal@gmail.com",
+        name: 'Sukhbir singh',
+        email: 's.sukhbirsohal@gmail.com',
       },
     },
     components: {
       securitySchemes: {
         jwt: {
-          type: "http",
-          scheme: "bearer",
-          bearerFormat: "JWT",
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
         },
       },
     },
@@ -28,11 +28,11 @@ const swaggerOptions = {
     ],
     servers: [
       {
-        url: "http://localhost:7500",
+        url: 'http://localhost:7500',
       },
     ],
   },
-  apis: ["./src/routes/*.ts"],
-};
+  apis: ['./src/routes/*.ts'],
+}
 
-export const swaggerDocs = swaggerJsDoc(swaggerOptions);
+export const swaggerDocs = swaggerJsDoc(swaggerOptions)

@@ -1,11 +1,6 @@
-import {
-    registerUser,
-    loginUser,
-    refreshToken,
-    test,
-} from '../controllers/auth'
+
 import express from 'express'
-import { authorize, protect } from '../middleware/auth'
+import { protect } from '../middleware/auth'
 import { getNewsByQuery, getTopHeadlines } from '../controllers/news'
 
 
