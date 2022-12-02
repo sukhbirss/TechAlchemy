@@ -30,5 +30,5 @@ export const statusResponse = {
   
 
 export const urlConfig = {
-    weatherApi: `https://api.openweathermap.org/data/2.5/forecast?q=New%20York&appid=${process.env.OPENWEATHER_API_KEY}&cnt=5`
+    weatherApi: `https://api.openweathermap.org/data/2.5/forecast?q=New%20York&appid=${process.env.OPENWEATHER_API_KEY}&cnt=30`
 }
