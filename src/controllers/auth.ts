@@ -34,8 +34,7 @@ export const registerUser = asyncHandler(
       email: email,
     }
 
-    const newUser = await User.create(createUser)
-    // await sendEmailVerificationMail(newUser, clientId)
+    await User.create(createUser)
     return res.status(200).json({
       success: true,
       message: 'Account created succesfully',
@@ -45,7 +44,7 @@ export const registerUser = asyncHandler(
 
 
 // @desc      Login User
-// @route     POST /v2/auth/login
+// @route     POST /v1/auth/login
 // @access    Public
 export const loginUser = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -79,7 +78,7 @@ export const loginUser = asyncHandler(
 
 
 // @desc      Refresh Token
-// @route     POST /v2/auth/refresh
+// @route     POST /v1/auth/refresh
 // @access    Public
 export const refreshToken = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -119,7 +118,7 @@ export const refreshToken = asyncHandler(
 // @route     POST /v2/auth/login
 // @access    Public
 export const test = asyncHandler(
-  async (req: Request, res: Response, next: NextFunction) => {
+  async (req: Request, res: Response) => {
     return res.status(200).json({
       success: true,
     })

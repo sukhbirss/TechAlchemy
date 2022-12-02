@@ -1,5 +1,4 @@
 import express, { Response, Request, Application } from 'express'
-import dotenv from 'dotenv'
 import morgan from 'morgan'
 import swaggerUI from 'swagger-ui-express'
 import cors from 'cors'
@@ -68,7 +67,7 @@ interface IError {
 }
 
 // Handle unhandled promise rejections
-process.on('unhandledRejection', (err: IError, promise) => {
+process.on('unhandledRejection', (err: IError) => {
   console.log(`Error: ${err?.message}`.red)
   // Close server & exit process
   server.close(() => process.exit(1))

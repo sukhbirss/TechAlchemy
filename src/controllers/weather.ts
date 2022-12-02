@@ -1,10 +1,9 @@
 import { Request, Response } from 'express'
 import asyncHandler from '../middleware/async'
-import { statusResponse, urlConfig } from '../utils/constants'
+import { urlConfig } from '../utils/constants'
 import axios from 'axios'
 import { IWeatherItem, IWeatherResponse } from '../Types/Weather'
 const { weatherApi } = urlConfig
-const { BAD_REQUEST, OK } = statusResponse
 
 // @desc      Login User
 // @route     POST /v2/auth/login

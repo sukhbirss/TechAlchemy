@@ -1,47 +1,43 @@
-import { Request, Response, NextFunction, Errback } from 'express'
+import { NextFunction, Request, Response } from 'express'
 import ErrorResponse from '../utils/errorResponse'
 
-interface Error extends Errback {
-  message: string;
-  code: number;
-  errors: Array<any>;
-  statusCode: number;
-  name: string;
-  value: string | number;
-}
-
 const errorHandeler = (
-  err: Error,
+  // eslint-disable-next-line
+  err: any,
   req: Request,
   res: Response,
+  // eslint-disable-next-line
   next: NextFunction
 ) => {
-  const error = { ...err }
+  let error: ErrorResponse = { ...err }
 
   error.message = err.message
 
   // Log to console for dev
-  console.log(err.name.red.bold)
+  if (err.name) console.log(err.name.red.bold)
 
   // colsole log error
-  console.log(err)
+  console.error(err)
 
   // Mongos bad object ID
   if (err.name === 'CastError') {
     const message = `Resource not found with id of ${err.value}`
-    // error = new ErrorResponse(message, 404);
+    error = new ErrorResponse(message, 404)
   }
 
   // Mongos duplicate key
   if (err.code === 11000) {
     const message = 'Duplicate field value entered'
-    // error = new ErrorResponse(message, 400);
+    error = new ErrorResponse(message, 400)
   }
 
   // Mongos validation error
   if (err.name === 'ValidationError') {
-    const message = Object.values(err.errors).map((val) => val.message)
-    // error = new ErrorResponse(message, 400);
+    const message = Object.values(err.errors)
+      // @ts-ignore
+      .map((val) => val.message)
+      .join(' && ')
+    error = new ErrorResponse(message, 400)
   }
 
   res.status(error.statusCode || 500).json({
