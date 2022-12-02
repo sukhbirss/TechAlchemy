@@ -1,5 +1,7 @@
 # assignment
 
+Postman Link https://www.getpostman.com/collections/3c6f9792df8b5fe1e8b4
+
 swagger documentation link
 http://localhost:7500/docs
 
