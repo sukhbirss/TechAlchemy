@@ -99,10 +99,10 @@ router.route('/login').post(loginUser)
 /**
  * @swagger
  * /v1/auth/refresh:
- *  post:
+ *  get:
  *    tags: [AUTH]
  *    parameters:
- *      -  in: headers
+ *      -  in: header
  *         name: refreshToken
  *         type: string
  * 
