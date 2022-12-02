@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-interface ProtectedRequest extends Request {
-  user?: object;
-}
+import { ProtectedRequest } from "../Types/Auth";
+
 const asyncHandler =
   (fn: Function) =>
   (req: Request | ProtectedRequest, res: Response, next: NextFunction) =>

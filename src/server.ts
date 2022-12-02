@@ -42,6 +42,10 @@ if (process.env.NODE_ENV === "development") {
 
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
+app.use('/v1/auth', authRoutes)
+app.use('/v1/news', newsRoutes)
+app.use('/v1/weather', weatherRoutes)
+
 app.use(errorHandeler);
 
 app.get("*", (req: Request, res: Response) => {
