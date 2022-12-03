@@ -37,7 +37,7 @@ export const registerUser = asyncHandler(
     await User.create(createUser)
     return res.status(200).json({
       success: true,
-      message: 'Account created succesfully',
+      error: 'Account created succesfully',
     })
   },
 )

@@ -19,7 +19,7 @@ import connectDB from './config/db'
 
 connectDB()
 
-const app: Application = express()
+export const app: Application = express()
 
 // Set security HTTP headers
 app.use(helmet())
