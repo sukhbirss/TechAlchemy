@@ -7,8 +7,12 @@ http://localhost:7500/docs
 
 
 How to start the application
-CMD -> npm run dev
+-> Before running please setup config file by taking the reference of sample config file in config folder
+-> npm install
+-> npm run dev
 
-Before running please setup config file by taking the reference of sample config file in config folder
+For testing Use
+-> npm run test
+
 
 Thanks
